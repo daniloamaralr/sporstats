@@ -1,16 +1,16 @@
-import './TransferItem.css';
+import "./TransferItem.css";
+import "./TransferDate"
+import TransferDate from "./TransferDate";
 
-function TransferItem() {
-    const transferDate = new Date(2023, 0, 3);
-    const transferTitle = "Gerson - Olympique - Flamengo"
-    const transferPrice = 15;
-
+function TransferItem(props) {
   return (
     <div className="transfer-item">
-      <div> {transferDate.toISOString()} </div>
+      <div>
+        <TransferDate date={props.date} />
+      </div>
       <div className="transfer-item__description">
-        <h2>{transferTitle}</h2>
-        <div className="transfer-item__price"> ${transferPrice}M</div>
+        <h2>{props.title}</h2>
+        <div className="transfer-item__price"> ${props.price}M</div>
       </div>
     </div>
   );
