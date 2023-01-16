@@ -1,10 +1,12 @@
+import './TransferItem.css';
+
 function TransferItem() {
   return (
-    <div>
+    <div className="transfer-item">
       <div> Jan 3rd 2023</div>
-      <div>
+      <div className="transfer-item__description">
         <h2>Gerson - Olympique - Flamengo</h2>
-        <div> $15M</div>
+        <div className="transfer-item__price"> $15M</div>
       </div>
     </div>
   );
