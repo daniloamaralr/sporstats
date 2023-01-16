@@ -1,10 +1,11 @@
+import Card from "./Card"
 import "./TransferItem.css";
 import "./TransferDate"
 import TransferDate from "./TransferDate";
 
 function TransferItem(props) {
   return (
-    <div className="transfer-item">
+    <Card className="transfer-item">
       <div>
         <TransferDate date={props.date} />
       </div>
@@ -12,7 +13,7 @@ function TransferItem(props) {
         <h2>{props.title}</h2>
         <div className="transfer-item__price"> ${props.price}M</div>
       </div>
-    </div>
+    </Card>
   );
 }
 

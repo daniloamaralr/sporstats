@@ -1,4 +1,4 @@
-import TransferItem from "./components/TransferItem";
+import Transfers from "./components/Transfers";
 
 function App() {
   const transfers = [
@@ -29,28 +29,9 @@ function App() {
   ];
   return (
     <div>
-      <h2>Let's get started!</h2>
-      <TransferItem
-        date={transfers[0].date}
-        title={transfers[0].title}
-        price={transfers[0].price}
-      />
-      <TransferItem
-        date={transfers[1].date}
-        title={transfers[1].title}
-        price={transfers[1].price}
-      />
-      <TransferItem
-        date={transfers[2].date}
-        title={transfers[2].title}
-        price={transfers[2].price}
-      />
-      <TransferItem
-        date={transfers[3].date}
-        title={transfers[3].title}
-        price={transfers[3].price}
-      />
-    </div>
+      <h2>Mengão Transfers</h2>
+      <Transfers items = {transfers}/>
+    </div>  
   );
 }
 
