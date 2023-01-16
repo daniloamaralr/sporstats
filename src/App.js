@@ -1,6 +1,6 @@
-import Transfers from "./components/Transfers";
+import Transfers from "./components/Tranfers/Transfers"
 
-function App() {
+const App = () => {
   const transfers = [
     {
       id: 1,

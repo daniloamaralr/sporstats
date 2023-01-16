@@ -1,9 +1,9 @@
-import Card from "./Card"
+import Card from "../UI/Card"
 import "./TransferItem.css";
 import "./TransferDate"
 import TransferDate from "./TransferDate";
 
-function TransferItem(props) {
+const TransferItem = (props) => {
   return (
     <Card className="transfer-item">
       <div>

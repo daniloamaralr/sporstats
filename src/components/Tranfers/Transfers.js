@@ -1,8 +1,8 @@
-import Card from "./Card"
+import Card from "../UI/Card"
 import TransferItem from "./TransferItem";
 import "./Transfers.css"
 
-function Transfers(props) {
+const Transfers = (props) =>{
   let transfers = props.items;
   return (
     <Card className="transfers">
