@@ -1,3 +1,4 @@
+import NewTransfer from "./components/NewTransfer/NewTransfer";
 import Transfers from "./components/Tranfers/Transfers"
 
 const App = () => {
@@ -29,7 +30,7 @@ const App = () => {
   ];
   return (
     <div>
-      <h2>Mengão Transfers</h2>
+      <NewTransfer />
       <Transfers items = {transfers}/>
     </div>  
   );
