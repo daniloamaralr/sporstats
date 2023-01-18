@@ -10,7 +10,7 @@ const Transfers = (props) => {
   const [filteredYear, setFilteredYear] = useState("2020");
 
   const selectYearHandler = (selectedYear) => {
-    console.log(selectedYear)
+    console.log(selectedYear);
     setFilteredYear(selectedYear);
   };
   return (
@@ -20,26 +20,14 @@ const Transfers = (props) => {
           selected={filteredYear}
           onSelectYear={selectYearHandler}
         />
-        <TransferItem
-          date={transfers[0].date}
-          title={transfers[0].title}
-          price={transfers[0].price}
-        />
-        <TransferItem
-          date={transfers[1].date}
-          title={transfers[1].title}
-          price={transfers[1].price}
-        />
-        <TransferItem
-          date={transfers[2].date}
-          title={transfers[2].title}
-          price={transfers[2].price}
-        />
-        <TransferItem
-          date={transfers[3].date}
-          title={transfers[3].title}
-          price={transfers[3].price}
-        />
+        {transfers.map((transfer) => (
+          <TransferItem
+            key={transfer.id}
+            date={transfer.date}
+            title={transfer.title}
+            price={transfer.price}
+          />
+        ))}
       </Card>
     </div>
   );
