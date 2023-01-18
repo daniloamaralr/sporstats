@@ -35,7 +35,7 @@ const App = () => {
   
   return (
     <div>
-      <NewTransfer onNewTranferAdded={newTransferHandler}/>
+      <NewTransfer onAddTransfer={newTransferHandler}/>
       <Transfers items = {transfers}/>
     </div>  
   );

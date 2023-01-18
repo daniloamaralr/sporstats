@@ -39,7 +39,7 @@ const TransferForm = (props) => {
       date: new Date(enteredDate),
     };
 
-    props.onSubmittedNewTransfer(transferData)
+    props.onSaveNewTransfer(transferData)
     setEnteredTitle("");
     setEnteredPrice("");
     setEnteredDate("");
