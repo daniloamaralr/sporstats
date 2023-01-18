@@ -28,9 +28,14 @@ const App = () => {
       price: 7,
     },
   ];
+
+  const newTransferHandler = (enteredTransfer) => {
+    console.log(enteredTransfer);
+  };
+  
   return (
     <div>
-      <NewTransfer />
+      <NewTransfer onNewTranferAdded={newTransferHandler}/>
       <Transfers items = {transfers}/>
     </div>  
   );
