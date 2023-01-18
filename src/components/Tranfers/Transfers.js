@@ -5,14 +5,18 @@ import TransferFilter from "./TransferFilter";
 import "./Transfers.css";
 
 const Transfers = (props) => {
-  let transfers = props.items;
+  //let transfers = props.items;
 
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState("2023");
 
   const selectYearHandler = (selectedYear) => {
-    console.log(selectedYear);
     setFilteredYear(selectedYear);
   };
+
+  const filteredTransfers = props.items.filter(transfer => {
+    return transfer.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <div>
       <Card className="transfers">
@@ -20,7 +24,7 @@ const Transfers = (props) => {
           selected={filteredYear}
           onSelectYear={selectYearHandler}
         />
-        {transfers.map((transfer) => (
+        {filteredTransfers.map((transfer) => (
           <TransferItem
             key={transfer.id}
             date={transfer.date}
