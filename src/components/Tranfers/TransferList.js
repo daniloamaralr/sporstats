@@ -20,8 +20,9 @@ const TransferList = (props) => {
   );
 };
 
+//rendering with conditional if
 // const TransferList = (props) => {
-//   let transfersContent = <p>No tranfers found</p>;
+//   let transfersContent = <h2 className="transfers-list__fallback">Found no Transfers</h2>;
 //   if (props.items.length > 0) {
 // transfersContent = props.items.map((transfer) => (
 //   <TransferItem
