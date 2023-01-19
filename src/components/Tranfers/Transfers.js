@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "../UI/Card";
-import TransferItem from "./TransferItem";
 import TransferFilter from "./TransferFilter";
+import TransferList from "./TransferList";
 import "./Transfers.css";
 
 const Transfers = (props) => {
@@ -17,18 +17,6 @@ const Transfers = (props) => {
     return transfer.date.getFullYear().toString() === filteredYear;
   });
 
-  let transfersContent = <p>No tranfers found</p>;
-  if (filteredTransfers.length > 0) {
-    transfersContent = filteredTransfers.map((transfer) => (
-      <TransferItem
-        key={transfer.id}
-        date={transfer.date}
-        title={transfer.title}
-        price={transfer.price}
-      />
-    ));
-  }
-
   return (
     <div>
       <Card className="transfers">
@@ -36,7 +24,7 @@ const Transfers = (props) => {
           selected={filteredYear}
           onSelectYear={selectYearHandler}
         />
-        {transfersContent}
+        {<TransferList items={filteredTransfers}/>}
         {/* {filteredTransfers.length === 0 && <p>No tranfers found</p>}
         {filteredTransfers.length > 0 && filteredTransfers.length === 0 ? (
           <p>No tranfers found</p>
