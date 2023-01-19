@@ -13,9 +13,21 @@ const Transfers = (props) => {
     setFilteredYear(selectedYear);
   };
 
-  const filteredTransfers = props.items.filter(transfer => {
+  const filteredTransfers = props.items.filter((transfer) => {
     return transfer.date.getFullYear().toString() === filteredYear;
   });
+
+  let transfersContent = <p>No tranfers found</p>;
+  if (filteredTransfers.length > 0) {
+    transfersContent = filteredTransfers.map((transfer) => (
+      <TransferItem
+        key={transfer.id}
+        date={transfer.date}
+        title={transfer.title}
+        price={transfer.price}
+      />
+    ));
+  }
 
   return (
     <div>
@@ -24,14 +36,32 @@ const Transfers = (props) => {
           selected={filteredYear}
           onSelectYear={selectYearHandler}
         />
-        {filteredTransfers.map((transfer) => (
-          <TransferItem
-            key={transfer.id}
-            date={transfer.date}
-            title={transfer.title}
-            price={transfer.price}
-          />
-        ))}
+        {transfersContent}
+        {/* {filteredTransfers.length === 0 && <p>No tranfers found</p>}
+        {filteredTransfers.length > 0 && filteredTransfers.length === 0 ? (
+          <p>No tranfers found</p>
+        ) : (
+          filteredTransfers.map((transfer) => (
+            <TransferItem
+              key={transfer.id}
+              date={transfer.date}
+              title={transfer.title}
+              price={transfer.price}
+            />
+          ))
+        )} */}
+        {/* {filteredTransfers.length === 0 ? (
+          <p>No tranfers found</p>
+        ) : (
+          filteredTransfers.map((transfer) => (
+            <TransferItem
+              key={transfer.id}
+              date={transfer.date}
+              title={transfer.title}
+              price={transfer.price}
+            />
+          ))
+        )} */}
       </Card>
     </div>
   );
