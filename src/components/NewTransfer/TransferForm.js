@@ -35,7 +35,7 @@ const TransferForm = (props) => {
 
     const transferData = {
       title: enteredTitle,
-      price: enteredPrice,
+      price: +enteredPrice,
       date: new Date(enteredDate),
     };
 

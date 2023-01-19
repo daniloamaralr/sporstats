@@ -24,7 +24,7 @@ const INITIAL_TRANSFERS = [
   {
     id: 4,
     date: new Date(2023, 0, 1),
-    title: "Ayrton Lucas - Olympique - Flamengo",
+    title: "Ayrton Lucas - Spartak Moscou - Flamengo",
     price: 7,
   },
 ];

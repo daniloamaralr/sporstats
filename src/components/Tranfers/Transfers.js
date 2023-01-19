@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 import TransferFilter from "./TransferFilter";
 import TransferList from "./TransferList";
+import TransferChart from "./TransferChart";
 import "./Transfers.css";
 
 const Transfers = (props) => {
@@ -24,6 +25,7 @@ const Transfers = (props) => {
           selected={filteredYear}
           onSelectYear={selectYearHandler}
         />
+        <TransferChart transfers={filteredTransfers}></TransferChart>
         {<TransferList items={filteredTransfers}/>}
         {/* {filteredTransfers.length === 0 && <p>No tranfers found</p>}
         {filteredTransfers.length > 0 && filteredTransfers.length === 0 ? (
